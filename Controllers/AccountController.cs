@@ -65,7 +65,7 @@ namespace API.Controllers
 
         public async Task<bool> UserExits(string username)
         {
-            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
+            return await _context.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower());
         }
     }
 }
